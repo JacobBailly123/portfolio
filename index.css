@@ -1,0 +1,125 @@
+body.home {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+
+}
+
+.header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    text-align: center;
+}
+
+.header-left a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+
+
+#intro,
+#interests,
+#career {
+    font-size: 18px;
+    margin: 75px 20px;
+    padding: 15px;
+    background-color: white;
+    text-align: left;
+}
+
+#career {
+    margin-bottom: 100px;
+}
+
+#headshot {
+    position: fixed;
+    bottom: 0;
+    left: 75%;
+    width: 300px;
+    height: 320px;
+}
+
+body.contactpage {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+body.contactpage .contact {
+    text-align: center;
+    max-width: 600px;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+
+}
+
+body.contactpage h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+body.contactpage p {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+body.contactpage strong {
+    font-weight: bold;
+}
+
+body.portfolioworks {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+}
+
+body.portfolioworks .math-works {
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 50px;
+}
+
+
+body.portfolioworks h1 {
+
+    font-size: 24px;
+    padding: 40px;
+    margin-bottom: 2px;
+
+}
+
+body.portfolioworks .cs-works {
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 50px;
+}
+
+body.portfolioworks p {
+    font-size: 18px;
+    margin: 5px 5px;
+    padding: 10px;
+}
+
+body.portfolioworks h2 {
+    font-size: 24px;
+    padding: 40px;
+    margin-bottom: 2px;
+}
+
+
