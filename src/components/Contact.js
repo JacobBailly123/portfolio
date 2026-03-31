@@ -4,7 +4,7 @@ const contactLinks = [
   { label: 'Email', value: 'jacobbailly2002@gmail.com', href: 'mailto:jacobbailly2002@gmail.com' },
   { label: 'LinkedIn', value: 'linkedin.com/in/jacob-bailly', href: 'https://www.linkedin.com/in/jacob-bailly-22a31919a' },
   { label: 'GitHub', value: 'github.com/JacobBailly123', href: 'https://github.com/JacobBailly123' },
-  { label: 'Location', value: 'Yonkers, NY — Open to NYC roles', href: null },
+  { label: 'Location', value: 'Yonkers, NY. Open to NYC roles.', href: null },
 ];
 
 export default function Contact() {

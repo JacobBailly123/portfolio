@@ -5,7 +5,7 @@ const projects = [
     num: '01',
     title: 'SociaLink',
     tag: 'Full-Stack Web App',
-    desc: 'A fully deployed social media platform — user auth, social feeds, direct messaging, friend requests, notifications, and hashtag trending. Built end to end: Vue 3 frontend on Vercel, Django REST API on Render, PostgreSQL database.',
+    desc: 'A fully deployed social media platform with user auth, social feeds, direct messaging, friend requests, notifications, and hashtag trending. Built end to end: Vue 3 frontend on Vercel, Django REST API on Render, PostgreSQL database.',
     tags: ['Vue 3', 'Django', 'Python', 'PostgreSQL', 'Tailwind CSS', 'JWT'],
     live: 'https://socia-link-beryl.vercel.app',
     github: 'https://github.com/JacobBailly123/SociaLink',
@@ -14,7 +14,7 @@ const projects = [
     num: '02',
     title: 'Wordle Clone',
     tag: 'Browser Game',
-    desc: 'A clean recreation of Wordle in vanilla JavaScript — no frameworks, no dependencies. Custom word list, animated tile flipping, keyboard color tracking, shake animations for invalid guesses, and persistent win/lose detection.',
+    desc: 'A clean recreation of Wordle in vanilla JavaScript with no frameworks or dependencies. Custom word list, animated tile flipping, keyboard color tracking, shake animations for invalid guesses, and persistent win/lose detection.',
     tags: ['JavaScript', 'HTML', 'CSS'],
     live: 'https://jacobbailly123.github.io/mywordle/',
     github: 'https://github.com/JacobBailly123/mywordle',
@@ -23,7 +23,7 @@ const projects = [
     num: '03',
     title: 'Global Income Inequality Dashboard',
     tag: 'Data Visualization',
-    desc: 'An interactive Tableau dashboard analyzing income inequality trends across 9 countries from 1985–2024. Built from World Inequality Database (WID) data — featuring line, bar, and multi-panel charts examining how top income shares have shifted over four decades.',
+    desc: 'An interactive Tableau dashboard analyzing income inequality trends across 9 countries from 1985 to 2024. Built from World Inequality Database (WID) data, featuring line, bar, and multi-panel charts examining how top income shares have shifted over four decades.',
     tags: ['Tableau', 'Python', 'Data Analysis', 'WID Data'],
     live: 'https://public.tableau.com/app/profile/jacob.bailly/viz/GlobalIncomeInequalityDashboard_17749254978160/GlobalIncomeInequality',
     github: null,
@@ -79,7 +79,7 @@ export default function Projects() {
 
         {/* Research card */}
         <div style={{ background: '#f7fdf9', border: '1px solid #b7e4c7', borderRadius: '6px', padding: '2rem' }}>
-          <p style={{ fontSize: '0.72rem', color: '#2d6a4f', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '0.4rem' }}>Senior Capstone Research — CMSV 2024</p>
+          <p style={{ fontSize: '0.72rem', color: '#2d6a4f', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '0.4rem' }}>Senior Capstone Research, CMSV 2024</p>
           <h3 style={{ fontFamily: "'DM Serif Display', serif", fontSize: '1.3rem', color: '#1a1a1a', marginBottom: '0.75rem' }}>
             Complex-Valued & Real-Valued SKEF Structural Functions
           </h3>
@@ -88,8 +88,8 @@ export default function Projects() {
             Modeled scalar field dynamics via Laplace PDEs (∇²φ = 0) using Stationary Kinematic
             Euler-Fourier (SKEF) structural frameworks. Applied the Decomposition into Invariant
             Structures (DIS) method to reduce complex PDEs to algebraic equations. Analyzed the
-            wave parameter R<sub>zn</sub> — demonstrating exponential decay in amplitude, hyperbolic
-            relationships in period, and horizontal shift behavior — supported by formal proofs.
+            wave parameter R<sub>zn</sub>, demonstrating exponential decay in amplitude, hyperbolic
+            relationships in period, and horizontal shift behavior, supported by formal proofs.
           </p>
           <a href="https://github.com/JacobBailly123/skef-research" target="_blank" rel="noreferrer"
             style={{ fontSize: '0.78rem', color: '#888', border: '1px solid #e0dbd2', borderRadius: '3px', padding: '0.4rem 0.9rem', display: 'inline-block', transition: 'background 0.2s' }}
