@@ -72,7 +72,7 @@ export default function Projects() {
           <h3 style={{ fontFamily: "'DM Serif Display', serif", fontSize: '1.3rem', color: '#1a1a1a', marginBottom: '0.75rem' }}>
             Complex-Valued & Real-Valued SKEF Structural Functions
           </h3>
-          <p style={{ fontSize: '0.9rem', color: '#6b6560', lineHeight: 1.75 }}>
+          <p style={{ fontSize: '0.9rem', color: '#6b6560', lineHeight: 1.75, marginBottom: '1.25rem' }}>
             Under supervision of Dr. Victor A. Miroshnikov, Dept. of Mathematics & Data Analytics.
             Modeled scalar field dynamics via Laplace PDEs (∇²φ = 0) using Stationary Kinematic
             Euler-Fourier (SKEF) structural frameworks. Applied the Decomposition into Invariant
@@ -80,6 +80,11 @@ export default function Projects() {
             wave parameter R<sub>zn</sub> — demonstrating exponential decay in amplitude, hyperbolic
             relationships in period, and horizontal shift behavior — supported by formal proofs.
           </p>
+          <a href="https://github.com/JacobBailly123/skef-research" target="_blank" rel="noreferrer"
+            style={{ fontSize: '0.78rem', color: '#888', border: '1px solid #e0dbd2', borderRadius: '3px', padding: '0.4rem 0.9rem', display: 'inline-block', transition: 'background 0.2s' }}
+            onMouseEnter={e => e.target.style.background = '#f7f5f0'}
+            onMouseLeave={e => e.target.style.background = 'transparent'}
+          >GitHub ↗</a>
         </div>
       </div>
     </section>
