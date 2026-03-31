@@ -36,7 +36,7 @@ export default function About() {
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: '1.4rem' }}>
           <p style={{ fontSize: '1rem', color: '#6b6560', lineHeight: 1.85 }}>
-            I grew up in the Bahamas and came to New York to study mathematics — not because it was practical,
+            I grew up in the Bahamas and came to New York to study mathematics, not because it was practical,
             but because I genuinely love it. I graduated{' '}
             <strong style={{ color: '#1a1a1a', fontWeight: 500 }}>Magna Cum Laude</strong> from the College of
             Mount Saint Vincent and was awarded the{' '}
@@ -45,11 +45,11 @@ export default function About() {
           </p>
           <p style={{ fontSize: '1rem', color: '#6b6560', lineHeight: 1.85 }}>
             My view is simple: if you understand the mathematics behind something, you've already done the hard part.
-            That's what drives my interest in data — it's applied math, and math is something I've put real
+            That's what drives my interest in data: it's applied math, and math is something I've put real
             time into understanding.
           </p>
           <p style={{ fontSize: '1rem', color: '#6b6560', lineHeight: 1.85 }}>
-            I'm building toward a career where I can keep growing quantitatively. The workforce is evolving fast —
+            I'm building toward a career where I can keep growing quantitatively. The workforce is evolving fast,
             AI, automation, new tools — and I'm not intimidated by that. I have the analytical foundation and
             I'm ready to layer on whatever technical skills the role demands.
           </p>
@@ -60,9 +60,9 @@ export default function About() {
             </p>
             <p style={{ fontSize: '0.92rem', color: '#6b6560', lineHeight: 1.7 }}>
               Authored research on <em>Complex-Valued & Real-Valued SKEF Structural Functions</em> under
-              Dr. Victor A. Miroshnikov — analyzing scalar field dynamics via Laplace PDEs using the
-              Decomposition into Invariant Structures (DIS) method, and conducting parametric wave analysis
-              across exponential, hyperbolic, and shift behaviors.
+              the supervision of Dr. Victor A. Miroshnikov, analyzing scalar field dynamics via Laplace PDEs
+              using the Decomposition into Invariant Structures (DIS) method and conducting parametric wave
+              analysis across exponential, hyperbolic, and shift behaviors.
             </p>
           </div>
         </div>
