@@ -19,6 +19,15 @@ const projects = [
     live: 'https://jacobbailly123.github.io/mywordle/',
     github: 'https://github.com/JacobBailly123/mywordle',
   },
+  {
+    num: '03',
+    title: 'Global Income Inequality Dashboard',
+    tag: 'Data Visualization',
+    desc: 'An interactive Tableau dashboard analyzing income inequality trends across 9 countries from 1985–2024. Built from World Inequality Database (WID) data — featuring line, bar, and multi-panel charts examining how top income shares have shifted over four decades.',
+    tags: ['Tableau', 'Python', 'Data Analysis', 'WID Data'],
+    live: 'https://public.tableau.com/app/profile/jacob.bailly/viz/GlobalIncomeInequalityDashboard_17749254978160/GlobalIncomeInequality',
+    github: null,
+  },
 ];
 
 export default function Projects() {
@@ -56,11 +65,13 @@ export default function Projects() {
                   onMouseEnter={e => e.target.style.background = '#f7fdf9'}
                   onMouseLeave={e => e.target.style.background = 'transparent'}
                 >Live ↗</a>
-                <a href={p.github} target="_blank" rel="noreferrer"
-                  style={{ fontSize: '0.78rem', color: '#888', border: '1px solid #e0dbd2', borderRadius: '3px', padding: '0.4rem 0.9rem', textAlign: 'center', transition: 'background 0.2s', whiteSpace: 'nowrap' }}
-                  onMouseEnter={e => e.target.style.background = '#f7f5f0'}
-                  onMouseLeave={e => e.target.style.background = 'transparent'}
-                >GitHub</a>
+                {p.github && (
+                  <a href={p.github} target="_blank" rel="noreferrer"
+                    style={{ fontSize: '0.78rem', color: '#888', border: '1px solid #e0dbd2', borderRadius: '3px', padding: '0.4rem 0.9rem', textAlign: 'center', transition: 'background 0.2s', whiteSpace: 'nowrap' }}
+                    onMouseEnter={e => e.target.style.background = '#f7f5f0'}
+                    onMouseLeave={e => e.target.style.background = 'transparent'}
+                  >GitHub</a>
+                )}
               </div>
             </div>
           </div>
