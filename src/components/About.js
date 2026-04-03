@@ -25,7 +25,7 @@ export default function About() {
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'start' }}>
         <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={viewport}>
           <img
-            src="/headshot.jpg"
+            src={`${process.env.PUBLIC_URL}/headshot.jpg`}
             alt="Jacob Bailly"
             style={{
               width: '100%', aspectRatio: '1/1', objectFit: 'cover',
