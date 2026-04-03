@@ -24,15 +24,14 @@ export default function About() {
 
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'start' }}>
         <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={viewport}>
-          <div style={{
-            width: '100%', aspectRatio: '3/4', background: '#f0ede8',
-            border: '1px solid #e0dbd2', borderRadius: '4px',
-            display: 'flex', alignItems: 'center', justifyContent: 'center',
-            flexDirection: 'column', gap: '0.5rem',
-          }}>
-            <span style={{ fontFamily: "'DM Serif Display', serif", fontSize: '4rem', color: '#d5d0c8' }}>JB</span>
-            <span style={{ fontSize: '0.72rem', color: '#bbb', letterSpacing: '0.1em' }}>Photo coming soon</span>
-          </div>
+          <img
+            src="/headshot.jpg"
+            alt="Jacob Bailly"
+            style={{
+              width: '100%', aspectRatio: '1/1', objectFit: 'cover',
+              border: '1px solid #e0dbd2', borderRadius: '4px', display: 'block',
+            }}
+          />
 
           <div style={{ display: 'flex', gap: '0', marginTop: '1.5rem', border: '1px solid #e0dbd2', borderRadius: '4px', overflow: 'hidden', background: '#fff' }}>
             {[{ num: '3.78', label: 'GPA' }, { num: '#1', label: 'Math Dept.' }, { num: '2024', label: 'Graduated' }].map((s, i) => (
