@@ -1,4 +1,4 @@
-import React from 'react';
+import { motion } from 'framer-motion';
 
 const projects = [
   {
@@ -30,17 +30,38 @@ const projects = [
   },
 ];
 
+const fadeUp = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } },
+};
+
+const stagger = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.1 } },
+};
+
+const viewport = { once: true, margin: '-60px' };
+
 export default function Projects() {
   return (
     <section id="projects" style={{ padding: '8rem 2.5rem', maxWidth: '960px', margin: '0 auto' }}>
-      <p style={{ fontSize: '0.75rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: '#2d6a4f', marginBottom: '1rem' }}>Projects</p>
-      <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 'clamp(2rem, 5vw, 3rem)', color: '#1a1a1a', marginBottom: '3rem', lineHeight: 1.2 }}>
-        Things I've built
-      </h2>
+      <motion.div variants={stagger} initial="hidden" whileInView="visible" viewport={viewport}>
+        <motion.p variants={fadeUp} style={{ fontSize: '0.75rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: '#2d6a4f', marginBottom: '1rem' }}>Projects</motion.p>
+        <motion.h2 variants={fadeUp} style={{ fontFamily: "'DM Serif Display', serif", fontSize: 'clamp(2rem, 5vw, 3rem)', color: '#1a1a1a', marginBottom: '3rem', lineHeight: 1.2 }}>
+          Things I've built
+        </motion.h2>
+      </motion.div>
 
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+      <motion.div
+        variants={stagger}
+        initial="hidden"
+        whileInView="visible"
+        viewport={viewport}
+        style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}
+      >
         {projects.map(p => (
-          <div key={p.num}
+          <motion.div key={p.num}
+            variants={fadeUp}
             style={{ background: '#fff', border: '1px solid #e0dbd2', borderRadius: '6px', padding: '2rem', transition: 'border-color 0.2s, box-shadow 0.2s' }}
             onMouseEnter={e => { e.currentTarget.style.borderColor = '#b7e4c7'; e.currentTarget.style.boxShadow = '0 4px 20px rgba(45,106,79,0.08)'; }}
             onMouseLeave={e => { e.currentTarget.style.borderColor = '#e0dbd2'; e.currentTarget.style.boxShadow = 'none'; }}
@@ -74,11 +95,11 @@ export default function Projects() {
                 )}
               </div>
             </div>
-          </div>
+          </motion.div>
         ))}
 
         {/* Research card */}
-        <div style={{ background: '#f7fdf9', border: '1px solid #b7e4c7', borderRadius: '6px', padding: '2rem' }}>
+        <motion.div variants={fadeUp} style={{ background: '#f7fdf9', border: '1px solid #b7e4c7', borderRadius: '6px', padding: '2rem' }}>
           <p style={{ fontSize: '0.72rem', color: '#2d6a4f', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '0.4rem' }}>Senior Capstone Research, CMSV 2024</p>
           <h3 style={{ fontFamily: "'DM Serif Display', serif", fontSize: '1.3rem', color: '#1a1a1a', marginBottom: '0.75rem' }}>
             Complex-Valued & Real-Valued SKEF Structural Functions
@@ -96,8 +117,8 @@ export default function Projects() {
             onMouseEnter={e => e.target.style.background = '#f7f5f0'}
             onMouseLeave={e => e.target.style.background = 'transparent'}
           >GitHub ↗</a>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 }

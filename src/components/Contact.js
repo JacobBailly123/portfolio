@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import { motion } from 'framer-motion';
 
 const contactLinks = [
   { label: 'Email', value: 'jacobbailly2002@gmail.com', href: 'mailto:jacobbailly2002@gmail.com' },
@@ -6,6 +7,18 @@ const contactLinks = [
   { label: 'GitHub', value: 'github.com/JacobBailly123', href: 'https://github.com/JacobBailly123' },
   { label: 'Location', value: 'Yonkers, NY. Open to NYC roles.', href: null },
 ];
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } },
+};
+
+const stagger = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.1 } },
+};
+
+const viewport = { once: true, margin: '-60px' };
 
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', message: '' });
@@ -30,20 +43,29 @@ export default function Contact() {
 
   return (
     <section id="contact" style={{ padding: '8rem 2.5rem', maxWidth: '960px', margin: '0 auto' }}>
-      <p style={{ fontSize: '0.75rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: '#2d6a4f', marginBottom: '1rem' }}>Contact</p>
-      <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 'clamp(2rem, 5vw, 3rem)', color: '#1a1a1a', marginBottom: '1rem', lineHeight: 1.2 }}>
-        Let's talk
-      </h2>
-      <p style={{ color: '#6b6560', fontSize: '0.95rem', marginBottom: '3rem', maxWidth: '480px', lineHeight: 1.7 }}>
-        Open to data analyst, junior data science, and quant research roles in NYC.
-        If you have something in mind, reach out.
-      </p>
+      <motion.div variants={stagger} initial="hidden" whileInView="visible" viewport={viewport}>
+        <motion.p variants={fadeUp} style={{ fontSize: '0.75rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: '#2d6a4f', marginBottom: '1rem' }}>Contact</motion.p>
+        <motion.h2 variants={fadeUp} style={{ fontFamily: "'DM Serif Display', serif", fontSize: 'clamp(2rem, 5vw, 3rem)', color: '#1a1a1a', marginBottom: '1rem', lineHeight: 1.2 }}>
+          Let's talk
+        </motion.h2>
+        <motion.p variants={fadeUp} style={{ color: '#6b6560', fontSize: '0.95rem', marginBottom: '3rem', maxWidth: '480px', lineHeight: 1.7 }}>
+          Open to data analyst, junior data science, and quant research roles in NYC.
+          If you have something in mind, reach out.
+        </motion.p>
+      </motion.div>
 
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'start' }}>
-        <form style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }} onSubmit={handleSubmit}>
+        <motion.form
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewport}
+          style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}
+          onSubmit={handleSubmit}
+        >
           {submitted && (
             <div style={{ padding: '0.85rem 1rem', background: '#f7fdf9', border: '1px solid #b7e4c7', borderRadius: '4px', color: '#2d6a4f', fontSize: '0.88rem' }}>
-              ✓ Your mail client should have opened. If not, email me directly.
+              Your mail client should have opened. If not, email me directly.
             </div>
           )}
           {[{ name: 'name', label: 'Name', type: 'text', placeholder: 'Your name' },
@@ -75,9 +97,15 @@ export default function Contact() {
             onMouseEnter={e => e.target.style.background = '#40916c'}
             onMouseLeave={e => e.target.style.background = '#2d6a4f'}
           >Send Message</button>
-        </form>
+        </motion.form>
 
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '0' }}>
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-60px' }}
+          style={{ display: 'flex', flexDirection: 'column', gap: '0' }}
+        >
           {contactLinks.map((item, i) => (
             <div key={item.label} style={{ padding: '1.25rem 0', borderBottom: i < contactLinks.length - 1 ? '1px solid #f0ede8' : 'none' }}>
               <span style={{ fontSize: '0.72rem', color: '#bbb', letterSpacing: '0.1em', textTransform: 'uppercase', display: 'block', marginBottom: '0.3rem' }}>{item.label}</span>
@@ -92,7 +120,7 @@ export default function Contact() {
               )}
             </div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

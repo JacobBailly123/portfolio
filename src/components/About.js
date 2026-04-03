@@ -1,15 +1,29 @@
-import React from 'react';
+import { motion } from 'framer-motion';
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } },
+};
+
+const stagger = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.1 } },
+};
+
+const viewport = { once: true, margin: '-60px' };
 
 export default function About() {
   return (
     <section id="about" style={{ padding: '8rem 2.5rem', maxWidth: '960px', margin: '0 auto' }}>
-      <p style={{ fontSize: '0.75rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: '#2d6a4f', marginBottom: '1rem' }}>About</p>
-      <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 'clamp(2rem, 5vw, 3rem)', color: '#1a1a1a', marginBottom: '3rem', lineHeight: 1.2 }}>
-        The math came first.<br /><span style={{ fontStyle: 'italic', color: '#2d6a4f' }}>Everything else followed.</span>
-      </h2>
+      <motion.div variants={stagger} initial="hidden" whileInView="visible" viewport={viewport}>
+        <motion.p variants={fadeUp} style={{ fontSize: '0.75rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: '#2d6a4f', marginBottom: '1rem' }}>About</motion.p>
+        <motion.h2 variants={fadeUp} style={{ fontFamily: "'DM Serif Display', serif", fontSize: 'clamp(2rem, 5vw, 3rem)', color: '#1a1a1a', marginBottom: '3rem', lineHeight: 1.2 }}>
+          The math came first.<br /><span style={{ fontStyle: 'italic', color: '#2d6a4f' }}>Everything else followed.</span>
+        </motion.h2>
+      </motion.div>
 
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'start' }}>
-        <div>
+        <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={viewport}>
           <div style={{
             width: '100%', aspectRatio: '3/4', background: '#f0ede8',
             border: '1px solid #e0dbd2', borderRadius: '4px',
@@ -20,7 +34,6 @@ export default function About() {
             <span style={{ fontSize: '0.72rem', color: '#bbb', letterSpacing: '0.1em' }}>Photo coming soon</span>
           </div>
 
-          {/* Stats */}
           <div style={{ display: 'flex', gap: '0', marginTop: '1.5rem', border: '1px solid #e0dbd2', borderRadius: '4px', overflow: 'hidden', background: '#fff' }}>
             {[{ num: '3.78', label: 'GPA' }, { num: '#1', label: 'Math Dept.' }, { num: '2024', label: 'Graduated' }].map((s, i) => (
               <div key={s.label} style={{
@@ -32,29 +45,35 @@ export default function About() {
               </div>
             ))}
           </div>
-        </div>
+        </motion.div>
 
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '1.4rem' }}>
-          <p style={{ fontSize: '1rem', color: '#6b6560', lineHeight: 1.85 }}>
+        <motion.div
+          variants={stagger}
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewport}
+          style={{ display: 'flex', flexDirection: 'column', gap: '1.4rem' }}
+        >
+          <motion.p variants={fadeUp} style={{ fontSize: '1rem', color: '#6b6560', lineHeight: 1.85 }}>
             I grew up in the Bahamas and came to New York to study mathematics, not because it was practical,
             but because I genuinely love it. I graduated{' '}
             <strong style={{ color: '#1a1a1a', fontWeight: 500 }}>Magna Cum Laude</strong> from the College of
             Mount Saint Vincent and was awarded the{' '}
             <strong style={{ color: '#1a1a1a', fontWeight: 500 }}>Mathematics Department Medal</strong>{' '}
             as the highest performing student in my graduating class.
-          </p>
-          <p style={{ fontSize: '1rem', color: '#6b6560', lineHeight: 1.85 }}>
+          </motion.p>
+          <motion.p variants={fadeUp} style={{ fontSize: '1rem', color: '#6b6560', lineHeight: 1.85 }}>
             My view is simple: if you understand the mathematics behind something, you've already done the hard part.
             That's what drives my interest in data: it's applied math, and math is something I've put real
             time into understanding.
-          </p>
-          <p style={{ fontSize: '1rem', color: '#6b6560', lineHeight: 1.85 }}>
+          </motion.p>
+          <motion.p variants={fadeUp} style={{ fontSize: '1rem', color: '#6b6560', lineHeight: 1.85 }}>
             I'm building toward a career where I can keep growing quantitatively. The workforce is evolving fast,
-            AI, automation, new tools — and I'm not intimidated by that. I have the analytical foundation and
+            AI, automation, new tools, and I'm not intimidated by that. I have the analytical foundation and
             I'm ready to layer on whatever technical skills the role demands.
-          </p>
+          </motion.p>
 
-          <div style={{ marginTop: '0.5rem', padding: '1.25rem 1.5rem', background: '#f7fdf9', border: '1px solid #b7e4c7', borderRadius: '4px' }}>
+          <motion.div variants={fadeUp} style={{ marginTop: '0.5rem', padding: '1.25rem 1.5rem', background: '#f7fdf9', border: '1px solid #b7e4c7', borderRadius: '4px' }}>
             <p style={{ fontSize: '0.72rem', color: '#2d6a4f', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '0.5rem' }}>
               Senior Capstone Research
             </p>
@@ -64,8 +83,8 @@ export default function About() {
               using the Decomposition into Invariant Structures (DIS) method and conducting parametric wave
               analysis across exponential, hyperbolic, and shift behaviors.
             </p>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );
